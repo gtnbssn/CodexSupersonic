@@ -1,0 +1,27 @@
+{
+  "extends": "$app/tsconfig",
+  "include": [
+    "src",
+    "tests",
+    "*.ts"
+  ],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "paths": {
+      "supersonic-scsynth": [
+        "./node_modules/supersonic-scsynth/supersonic.d.ts"
+      ],
+      "#lib/*": [
+        "./src/lib/*"
+      ]
+    }
+  }
+}

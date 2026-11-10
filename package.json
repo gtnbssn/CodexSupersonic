@@ -1,0 +1,45 @@
+{
+  "name": "confluence-sequencer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "dev": "vite dev --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "assets:sync": "node scripts/sync-assets.mjs",
+    "instruments:build": "node scripts/instruments-build.mjs",
+    "instruments:validate": "node scripts/instruments-validate.mjs",
+    "postinstall": "node scripts/sync-assets.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "@sveltejs/adapter-node": "6.0.1",
+    "@sveltejs/kit": "3.1.1",
+    "svelte": "5.57.3",
+    "supersonic-scsynth": "0.96.0",
+    "supersonic-scsynth-core": "0.96.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@playwright/test": "1.65.0",
+    "@types/node": "24.10.1",
+    "svelte-check": "4.7.8",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  },
+  "imports": {
+    "#lib": "./src/lib/index.ts",
+    "#lib/*": "./src/lib/*"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  }
+}
